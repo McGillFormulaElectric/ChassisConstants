@@ -1,8 +1,0 @@
-function [ OUT_FLT, OUT_RLT ] = Calculate_LLT( input_args )
-%This function calculates the front and the rear Lateral Load Transfers.
-
-
-OUT_FLT = (Vehicle.m*9.81.Vehicle.axle.front.track)(((Vehicle.H*Vehicle.axle.front.K)/(Vehicle.axle.front.K + Vehicle.axle.rear.K))+
-
-end
-
