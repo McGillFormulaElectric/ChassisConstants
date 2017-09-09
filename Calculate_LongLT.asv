@@ -1,6 +1,0 @@
-function [ OUT_FLongLT, OUT_RLongLT ] = Calculate_LongLT( Vehicle )
-%This function calculates the Longitudi Load Transfer
-
-
-end
-
