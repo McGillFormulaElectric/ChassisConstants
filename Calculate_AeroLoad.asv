@@ -1,0 +1,7 @@
+function [ OUT_AeroLoad_FL, OU ] = Calculate_AeroLoad( Vehicle, v )
+%UNTITLED4 Summary of this function goes here
+%   Detailed explanation goes here
+
+
+end
+
