@@ -22,48 +22,59 @@ Test.rho = 1.2;                         %Air Density
 %Results
 ChassisConstants.Results.Static.TestConditions = Test;
 ChassisConstants.Results.Static.RollAngle = 0;
-ChassisConstants.Results.Static.FrontRideHeight = Vehicle.axle.front.designRH + Vehicle.axle.front.staticRH;
-ChassisConstants.Results.Static.RearRideHeight = Vehicle.axle.rear.designRH + Vehicle.axle.rear.staticRH;
+ChassisConstants.Results.Static.FrontRideHeight =  Vehicle.axle.front.staticRH;
+ChassisConstants.Results.Static.RearRideHeight =  Vehicle.axle.rear.staticRH;
 ChassisConstants.Results.Static.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.Static.FrontRideHeight, ChassisConstants.Results.Static.RearRideHeight);
 
 %% Pure Cornering
-Test.Ay = 1;                            %Test Vehicle Lateral Acceleration [g]
+Test.Ay = 2;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 20;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.2;                         %Air Density
 % Results
-ChassisConstants.Results.PureCornering.TestConditions = Test;
-ChassisConstants.Results.PureCornering.RollAngle = Calculate_RollAngle(Vehicle, Test);
-ChassisConstants.Results.PureCornering.FrontRideHeight = Vehicle.axle.front.staticRH;
-ChassisConstants.Results.PureCornering.RearRideHeight = Vehicle.axle.front.staticRH;
-ChassisConstants.Results.PureCornering.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.PureCornering.FrontRideHeight, ChassisConstants.Results.PureCornering.RearRideHeight);
+ChassisConstants.Results.Cornering.TestConditions = Test;
+ChassisConstants.Results.Cornering.RollAngle = Calculate_RollAngle(Vehicle, Test);
+ChassisConstants.Results.Cornering.FrontRideHeight = Vehicle.axle.front.staticRH;
+ChassisConstants.Results.Cornering.RearRideHeight = Vehicle.axle.front.staticRH;
+ChassisConstants.Results.Cornering.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.Cornering.FrontRideHeight, ChassisConstants.Results.Cornering.RearRideHeight);
 
 %% Pure Braking
-Test.Ay = 0;                                %Test Vehicle Lateral Acceleration [g]
-Test.Ax = -1.5;                               %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 20;                                %Test Vehicle Speed [m/s]
+Test.Ay = 0;                                    %Test Vehicle Lateral Acceleration [g]
+Test.Ax = -1.5;                                 %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 20;                                    %Test Vehicle Speed [m/s]
+Test.rho = 1.2;                                 %Air Density
+%Results
+ChassisConstants.Results.Braking.TestConditions = Test;
+ChassisConstants.Results.Braking.RollAngle = 0;
+[ChassisConstants.Results.Braking.FrontRideHeight, ChassisConstants.Results.Braking.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.Braking.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.Braking.FrontRideHeight, ChassisConstants.Results.Braking.RearRideHeight);
+
+%% Corner Entry
+Test.Ay = 1.25;                             %Test Vehicle Lateral Acceleration [g]
+Test.Ax = -1.25;                            %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 15;                                %Test Vehicle Speed [m/s]
 Test.rho = 1.2;                             %Air Density
 %Results
-ChassisConstants.Results.PureBraking.TestConditions = Test;
-ChassisConstants.Results.PureBraking.RollAngle = 0;
-[ChassisConstants.Results.PureBraking.FrontRideHeight, ChassisConstants.Results.PureBraking.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
-ChassisConstants.Results.PureBraking.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.PureBraking.FrontRideHeight, ChassisConstants.Results.PureBraking.RearRideHeight);
+ChassisConstants.Results.CornerEntry.TestConditions = Test;
+ChassisConstants.Results.CornerEntry.RollAngle = Calculate_RollAngle(Vehicle, Test);
+[ChassisConstants.Results.CornerEntry.FrontRideHeight, ChassisConstants.Results.CornerEntry.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.CornerEntry.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.CornerEntry.FrontRideHeight, ChassisConstants.Results.CornerEntry.RearRideHeight);
 
-%% Combined Braking-Cornering
-Test.Ay = 1.25;                            %Test Vehicle Lateral Acceleration [g]
-Test.Ax = -1.25;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 20;                            %Test Vehicle Speed [m/s]
+%% Corner Exit
+Test.Ay = 1.25;                         %Test Vehicle Lateral Acceleration [g]
+Test.Ax = 1;                            %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 15;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.2;                         %Air Density
 %Results
-ChassisConstants.Results.Combined.TestConditions = Test;
-ChassisConstants.Results.Combined.RollAngle = Calculate_RollAngle(Vehicle, Test);
-[ChassisConstants.Results.Combined.FrontRideHeight, ChassisConstants.Results.Combined.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
-ChassisConstants.Results.Combined.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.Combined.FrontRideHeight, ChassisConstants.Results.Combined.RearRideHeight);
+ChassisConstants.Results.CornerExit.TestConditions = Test;
+ChassisConstants.Results.CornerExit.RollAngle = Calculate_RollAngle(Vehicle, Test);
+[ChassisConstants.Results.CornerExit.FrontRideHeight, ChassisConstants.Results.CornerExit.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.CornerExit.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.CornerExit.FrontRideHeight, ChassisConstants.Results.CornerExit.RearRideHeight);
 
 %% End of Straight
 Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 26;                            %Test Vehicle Speed [m/s]
+Test.v = 25;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.2;                         %Air Density
 %Results
 ChassisConstants.Results.EofS.TestConditions = Test;

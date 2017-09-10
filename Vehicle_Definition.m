@@ -24,8 +24,8 @@ Vehicle.axle.rear.zRC = 0.0892;               %Rear Roll Center height (m - from
 Vehicle.axle.front.zCG = 0.22;              %Effective CG Height at front axle (m)
 Vehicle.axle.rear.zCG = 0.30;               %Effective CG Height at rear axle (m)
 
-Vehicle.axle.front.designRH = 65;
-Vehicle.axle.rear.designRH = 30;
+Vehicle.axle.front.designRH = 65;           %Vehicle Front Design Ride Height [mm]
+Vehicle.axle.rear.designRH = 30;            %Vehicle Rear Design Ride Height
 
 Vehicle.axle.front.staticRH = 0;          %Axle Static Ride height (m)
 Vehicle.axle.rear.staticRH = 0;         %Axle Static Ride height (m)
@@ -33,8 +33,8 @@ Vehicle.axle.rear.staticRH = 0;         %Axle Static Ride height (m)
 Vehicle.axle.front.ARBratio = 0.207;            %Front ARB Rotation to Vehicle Roll
 Vehicle.axle.rear.ARBratio = 0.231;             %Rear ARB Rotation to Vehicle Roll
 
-Vehicle.axle.front.ARBe = 5.17;                 %Front ARB Torsional Stiffness [Nm/deg]
-Vehicle.axle.rear.ARBe = 4;                  %Rear ARB Torsional Stiffness [Nm/deg]
+Vehicle.axle.front.ARBe = 6.65;                 %Front ARB Torsional Stiffness [Nm/deg]
+Vehicle.axle.rear.ARBe = 5;                  %Rear ARB Torsional Stiffness [Nm/deg]
 
 %Corner Parameters
 Vehicle.axle.front.left.USM = 15;           %Front Left Unsprung mass [kg]
