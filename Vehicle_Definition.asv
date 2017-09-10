@@ -1,0 +1,75 @@
+%% Vehicle and Test Configurations 
+
+%% Vehicle Object
+
+Vehicle.m = 175;                            %Total Vehicle Mass [kg]
+Vehicle.MD = 45;                            %Vehicle Mass distribution [%front]
+Vehicle.h = 0.28;                           %Vehicle Centre of Gravity Height [m]
+Vehicle.wheelbase = 1.6;                    %Vehicle Wheelbase [m]
+Vehicle.hs = 1;                             %Vehicle Sprung Mass CG height [m]
+
+%Aero Parameters
+Vehicle.aero.CL = -3.5;                     %Vehicle Coefficient of Lift
+Vehicle.aero.CD = 1.6;                      %Vehicle Coeffirient of Drag
+Vehicle.aero.CP = 0.45;                     %Vehiclel Center of Pressure
+
+%Axle Parameters
+Vehicle.axle.front.track = 1;               %Front Axle Track [m]
+Vehicle.axle.rear.track = 1;                %Front Axle Track [m]
+
+Vehicle.axle.front.zRC = 0.03;              %Front Roll Center height (m - from ground)
+Vehicle.axle.rear.zRC = 0.04;               %Rear Roll Center height (m - from ground)
+
+Vehicle.axle.front.zCG = 0.15;              %Effective CG Height at front axle (m)
+Vehicle.axle.rear.zCG = 0.25;               %Effective CG Height at front axle (m)
+
+Vehicle.axle.front.staticRH = 0.2;
+Vehicle.axle.rear.staticRH = 0.025;
+
+Vehicle.axle.front.ARBratio = 1;
+Vehicle.axle.rear.ARBratio = 1;
+
+Vehicle.axle.front.ARBe = 8.7;
+Vehicle.axle.rear.ARBe = 9;
+
+%Corner Parameters
+Vehicle.axle.front.left.USM = 15;
+Vehicle.axle.front.right.USM = 15;
+Vehicle.axle.rear.left.USM = 15;
+Vehicle.axle.rear.right.USM = 15;
+
+Vehicle.axle.front.left.zCG = 15;
+Vehicle.axle.front.right.zCG = 15;
+Vehicle.axle.rear.left.zCG = 15;
+Vehicle.axle.rear.right.zCG = 15;
+
+Vehicle.axle.front.left.springrate = 320;
+Vehicle.axle.front.right.springrate = 300;
+Vehicle.axle.rear.left.springrate = 350;
+Vehicle.axle.rear.right.springrate = 350;
+
+Vehicle.axle.front.left.preload = 0;
+Vehicle.axle.front.right.preload = 0;
+Vehicle.axle.rear.left.preload = 0;
+Vehicle.axle.rear.right.preload = 0;
+
+Vehicle.axle.front.left.MR = 0.6;
+Vehicle.axle.front.right.MR = 0.6;
+Vehicle.axle.rear.left.MR = 0.6;
+Vehicle.axle.rear.right.MR = 0.6;
+
+Vehicle.axle.front.left.C = 10000;
+Vehicle.axle.front.right.C = 10000;
+Vehicle.axle.rear.left.C = 10000;
+Vehicle.axle.rear.right.C = 10000;
+
+%% Tyre Object
+
+Tyre.VStiffness = 10000;
+
+
+
+
+
+
+

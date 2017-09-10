@@ -1,4 +1,4 @@
-function [ OUT_Fz_FL, OUT_Fz_FR, OUT_Fz_RL, OUT_Fz_RR ] = Calculate_wheelLoads( Vehicle, Ay, Ax )
+function [ OUT_Fz_FL, OUT_Fz_FR, OUT_Fz_RL, OUT_Fz_RR ] = Calculate_wheelLoads( Vehicle, Test )
 %This function calculates all four wheel loads for a given vehicle under a
 %combined longitudinal acceleration and lateral acceleration. 
 %Reference: 
@@ -9,22 +9,22 @@ function [ OUT_Fz_FL, OUT_Fz_FR, OUT_Fz_RL, OUT_Fz_RR ] = Calculate_wheelLoads( 
 %1. Calculate Lateral Load Tranfer deltas
 
 [FLLT, RLLT] = Calculate_LLT(Vehicle);
-FLLT = Ay * FLLT;
-RLLT = Ay * RLLT;
+FLLT = Test.Ay * FLLT;
+RLLT = Test.Ay * RLLT;
 
 deltaLLT_FL = FLLT;
 deltaLLT_FR = -FLLT;
 deltaLLT_RL = RLLT;
-deltaLLT_RR = RLLT;
+deltaLLT_RR = -RLLT;
 
 %2. Longitudinal Load Transfer
 
-LongLT = Ax * Calculate_LongLT(Vehicle);
+LongLT = Test.Ax * Calculate_LongLT(Vehicle);
 
-deltaLongLt_FL = -LongLT;
-deltaLongLt_FR = -LongLT;
-deltaLongLt_RL = LongLT;
-deltaLongLt_RR = LongLT;
+deltaLongLt_FL = -LongLT/2;
+deltaLongLt_FR = -LongLT/2;
+deltaLongLt_RL = LongLT/2;
+deltaLongLt_RR = LongLT/2;
 
 %3. Aerodynamic Loads
 
