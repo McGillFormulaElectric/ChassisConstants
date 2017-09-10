@@ -6,8 +6,9 @@ Test.Ay = 0;
 
 [Fz_FL, Fz_FR, Fz_RL, Fz_RR] = Calculate_wheelLoads( Vehicle, Test );
 
-OUT_FrontRideHeight = Vehicle.axle.front.staticRH - ((Fz_FL + Fz_FR) * Vehicle.axle.front.Kr);
-OUT_RearRideHeight = Vehicle.axle.rear.staticRH - ((Fz_RL + Fz_RR) * Vehicle.axle.rear.Kr);
+OUT_FrontRideHeight = Vehicle.axle.front.designRH + Vehicle.axle.front.staticRH - ((Fz_FL + Fz_FR) / Vehicle.axle.front.Kr);
+
+OUT_RearRideHeight = Vehicle.axle.rear.designRH + Vehicle.axle.rear.staticRH - ((Fz_RL + Fz_RR) / Vehicle.axle.rear.Kr);
 
 end
 

@@ -30,6 +30,10 @@ deltaLongLt_RR = LongLT/2;
 
 [deltaAeroLoad_FL, deltaAeroLoad_FR, deltaAeroLoad_RL, deltaAeroLoad_RR] = Calculate_AeroLoad(Vehicle, Test);
 
+%4. Static Loads
+
+
+
 %4. Compile all deltas
 
 OUT_Fz_FL = deltaLLT_FL + deltaLongLt_FL + deltaAeroLoad_FL;
