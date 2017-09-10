@@ -2,8 +2,8 @@
 
 %% Vehicle Object
 
-Vehicle.m = 175;                            %Total Vehicle Mass [kg]
-Vehicle.MD = 45;                            %Vehicle Mass distribution [%front]
+Vehicle.m = 180;                            %Total Vehicle Mass [kg]
+Vehicle.MD = 42;                            %Vehicle Mass distribution [%front]
 Vehicle.h = 0.27;                           %Vehicle Centre of Gravity Height [m]
 Vehicle.wheelbase = 1.6;                    %Vehicle Wheelbase [m]
 Vehicle.hs = 0.25;                          %Vehicle Sprung Mass CG height [m]
