@@ -9,7 +9,7 @@
 
 %% Vehicle Definition
 
-Vehicle = Vehicle; %#ok<ASGSL>
+Vehicle = Vehicle; 
 Vehicle_Definition;
 
 %% Test Cases

@@ -26,6 +26,7 @@ classdef Vehicle < handle
         H;                              %Distance between vehicle CG and Roll Centre at CG [m]
         as;                             %Sprung Mass Distribution [%front]
         SM;                             %Sprung mass [kg]
+        SprungMassFrontSMF;                            %Front Sprung mass [kg]
         SMF;                            %Front Sprung mass [kg]
         SMR;                            %Rear Sprung mass [kg]
         TM;                             %Track at CG position [m]
