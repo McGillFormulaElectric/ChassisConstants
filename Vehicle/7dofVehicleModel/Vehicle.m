@@ -26,10 +26,11 @@ classdef Vehicle < handle
         H;                              %Distance between vehicle CG and Roll Centre at CG [m]
         as;                             %Sprung Mass Distribution [%front]
         SM;                             %Sprung mass [kg]
+        SprungMassFrontSMF;                            %Front Sprung mass [kg]
         SMF;                            %Front Sprung mass [kg]
         SMR;                            %Rear Sprung mass [kg]
         TM;                             %Track at CG position [m]
-        CM;                             %Roll Centre Height at CG Vehicle x-position
+        RCM;                            %Roll Centre Height at CG Vehicle x-position
         K;                              %Vehicle Roll Stiffness [Nm/deg]
         RSD;                            %Roll Stiffness Distribution [%front]
         RollGradient;                   %Vehicle Roll Gradient [deg/g]
@@ -42,10 +43,10 @@ classdef Vehicle < handle
            val.aero = Aerodynamics;
         end
         function OUT = get.a(obj)
-            OUT = (100 - obj.MD)/100 * obj.wheelbase; 
+            OUT = (1 - obj.MD) * obj.wheelbase; 
         end
         function OUT = get.b(obj)
-            OUT = obj.MD * obj.wheelbase /100;
+            OUT = obj.MD * obj.wheelbase;
         end
         function OUT = get.SM(obj)
             OUT = obj.m - obj.axle.front.left.USM - obj.axle.front.right.USM ...
@@ -53,7 +54,7 @@ classdef Vehicle < handle
         end
         function OUT = get.SMF(obj)
             FUM =  obj.axle.front.left.USM + obj.axle.front.right.USM;
-            SWD = ((obj.MD/100 * obj.m) - (FUM))/obj.SM;
+            SWD = ((obj.MD * obj.m) - (FUM))/obj.SM;
             OUT = SWD * obj.SM;
         end
         function OUT = get.SMR(obj) 
@@ -65,11 +66,11 @@ classdef Vehicle < handle
             x = adj*tan(teta);
             OUT = obj.axle.front.track + (2 * x);
         end
-        function OUT = get.CM(obj)
+        function OUT = get.RCM(obj)
             if obj.axle.front.zRC < obj.axle.rear.zRC
                 OUT = obj.axle.front.zRC + (obj.wheelbase*obj.MD*(obj.axle.rear.zRC - obj.axle.front.zRC));
             else
-                OUT = obj.axle.rear.zRC + (obj.wheelbase*((100-obj.MD)/100)*(obj.axle.front.zRC - obj.axle.rear.zRC));
+                OUT = obj.axle.rear.zRC + (obj.wheelbase*(1-obj.MD)*(obj.axle.front.zRC - obj.axle.rear.zRC));
             end
         end
         function OUT = get.RSD(obj)
@@ -86,7 +87,7 @@ classdef Vehicle < handle
             OUT = x2 * cos(teta);
         end
         function OUT = get.H(obj)
-            OUT = obj.h-obj.CM;
+            OUT = obj.h-obj.RCM;
         end
         function OUT = get.RollGradient(obj)
             OUT = -(obj.m * 9.81 * obj.H)/(obj.axle.front.K + obj.axle.rear.K);

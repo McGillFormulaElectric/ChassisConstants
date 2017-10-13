@@ -5,6 +5,7 @@ classdef Aerodynamics < handle
         CL;                     %Vehicle CL
         CD;                     %Vehicle CD
         CP;                     %Vehicle Center of Pressure [/1]
+        A;                      %Vehicle frontal area [m^2]
     end
     
    

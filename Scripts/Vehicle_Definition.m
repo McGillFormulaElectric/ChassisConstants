@@ -2,21 +2,22 @@
 
 %% Vehicle Object
 
-Vehicle.m = 180;                            %Total Vehicle Mass [kg]
-Vehicle.MD = 42;                            %Vehicle Mass distribution [%front]
+Vehicle.m = 245;                            %Total Vehicle Mass [kg]
+Vehicle.MD = 0.48;                          %Vehicle Mass distribution [%front]
 Vehicle.h = 0.27;                           %Vehicle Centre of Gravity Height [m]
-Vehicle.wheelbase = 1.6;                    %Vehicle Wheelbase [m]
+Vehicle.wheelbase = 1.56;                   %Vehicle Wheelbase [m]
 Vehicle.hs = 0.25;                          %Vehicle Sprung Mass CG height [m]
-Vehicle.designRake = 0;                         %Vehicle Design Rake Angle [deg]
+Vehicle.designRake = 0;                     %Vehicle Design Rake Angle [deg]
 
 %Aero Parameters
-Vehicle.aero.CL = -3.5;                     %Vehicle Coefficient of Lift
-Vehicle.aero.CD = 1.6;                      %Vehicle Coeffirient of Drag
-Vehicle.aero.CP = 0.45;                     %Vehiclel Center of Pressure
+Vehicle.aero.CL = -4.3;                     %Vehicle Coefficient of Lift
+Vehicle.aero.CD = 1.5;                      %Vehicle Coeffirient of Drag
+Vehicle.aero.CP = 0.50;                     %Vehicle Center of Pressure
+Vehicle.aero.A = 1.07;                     %Vehicle Reference Area for CL [m^2]    
 
 %Axle Parameters
 Vehicle.axle.front.track = 1.1176;               %Front Axle Track [m]
-Vehicle.axle.rear.track = 1.11176;                %Front Axle Track [m]
+Vehicle.axle.rear.track = 1.1176;                %Front Axle Track [m]
 
 Vehicle.axle.front.zRC = 0.0882;              %Front Roll Center height (m - from ground)
 Vehicle.axle.rear.zRC = 0.0892;               %Rear Roll Center height (m - from ground)
@@ -27,14 +28,14 @@ Vehicle.axle.rear.zCG = 0.30;               %Effective CG Height at rear axle (m
 Vehicle.axle.front.designRH = 65;           %Vehicle Front Design Ride Height [mm]
 Vehicle.axle.rear.designRH = 30;            %Vehicle Rear Design Ride Height
 
-Vehicle.axle.front.staticRH = 0;          %Axle Static Ride height (m)
-Vehicle.axle.rear.staticRH = 0;         %Axle Static Ride height (m)
+Vehicle.axle.front.staticRH = 0;            %Axle Static Delta Ride height to Design Ride Height (m)
+Vehicle.axle.rear.staticRH = 0;             %Axle Static Delta Ride height to Design Ride Height (m)
 
 Vehicle.axle.front.ARBratio = 0.207;            %Front ARB Rotation to Vehicle Roll
 Vehicle.axle.rear.ARBratio = 0.231;             %Rear ARB Rotation to Vehicle Roll
 
-Vehicle.axle.front.ARBe = 6.65;                 %Front ARB Torsional Stiffness [Nm/deg]
-Vehicle.axle.rear.ARBe = 5;                  %Rear ARB Torsional Stiffness [Nm/deg]
+Vehicle.axle.front.ARBe = 0;%6.65;                 %Front ARB Torsional Stiffness [Nm/deg]
+Vehicle.axle.rear.ARBe = 0;%5;                  %Rear ARB Torsional Stiffness [Nm/deg]
 
 %Corner Parameters
 Vehicle.axle.front.left.USM = 15;           %Front Left Unsprung mass [kg]
@@ -49,8 +50,8 @@ Vehicle.axle.rear.right.zCG = 0.15;           %Rear Right Unsprung CG height [m]
 
 Vehicle.axle.front.left.springrate = 300;   %Front Left Spring Rate in [lbs/in]
 Vehicle.axle.front.right.springrate = 300;  %Front Right Spring Rate in [lbs/in]
-Vehicle.axle.rear.left.springrate = 350;    %Rear Left Spring Rate in [lbs/in]
-Vehicle.axle.rear.right.springrate = 350;   %Rear Right Spring Rate in [lbs/in]
+Vehicle.axle.rear.left.springrate = 300;    %Rear Left Spring Rate in [lbs/in]
+Vehicle.axle.rear.right.springrate = 300;   %Rear Right Spring Rate in [lbs/in]
 
 Vehicle.axle.front.left.preload = 0;        %Front Left Spring Preload [mm]
 Vehicle.axle.front.right.preload = 0;       %Front Right Spring Preload [mm]
