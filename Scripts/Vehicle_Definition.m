@@ -2,8 +2,8 @@
 
 %% Vehicle Object
 
-Vehicle.m = 180;                            %Total Vehicle Mass [kg]
-Vehicle.MD = 42;                            %Vehicle Mass distribution [%front]
+Vehicle.m = 245;                            %Total Vehicle Mass [kg]
+Vehicle.MD = 0.42;                            %Vehicle Mass distribution [%front]
 Vehicle.h = 0.27;                           %Vehicle Centre of Gravity Height [m]
 Vehicle.wheelbase = 1.6;                    %Vehicle Wheelbase [m]
 Vehicle.hs = 0.25;                          %Vehicle Sprung Mass CG height [m]
@@ -27,8 +27,8 @@ Vehicle.axle.rear.zCG = 0.30;               %Effective CG Height at rear axle (m
 Vehicle.axle.front.designRH = 65;           %Vehicle Front Design Ride Height [mm]
 Vehicle.axle.rear.designRH = 30;            %Vehicle Rear Design Ride Height
 
-Vehicle.axle.front.staticRH = 0;          %Axle Static Ride height (m)
-Vehicle.axle.rear.staticRH = 0;         %Axle Static Ride height (m)
+Vehicle.axle.front.staticRH = 0;            %Axle Static Delta Ride height to Design Ride Height (m)
+Vehicle.axle.rear.staticRH = 0;             %Axle Static Delta Ride height to Design Ride Height (m)
 
 Vehicle.axle.front.ARBratio = 0.207;            %Front ARB Rotation to Vehicle Roll
 Vehicle.axle.rear.ARBratio = 0.231;             %Rear ARB Rotation to Vehicle Roll
@@ -49,8 +49,8 @@ Vehicle.axle.rear.right.zCG = 0.15;           %Rear Right Unsprung CG height [m]
 
 Vehicle.axle.front.left.springrate = 300;   %Front Left Spring Rate in [lbs/in]
 Vehicle.axle.front.right.springrate = 300;  %Front Right Spring Rate in [lbs/in]
-Vehicle.axle.rear.left.springrate = 350;    %Rear Left Spring Rate in [lbs/in]
-Vehicle.axle.rear.right.springrate = 350;   %Rear Right Spring Rate in [lbs/in]
+Vehicle.axle.rear.left.springrate = 300;    %Rear Left Spring Rate in [lbs/in]
+Vehicle.axle.rear.right.springrate = 300;   %Rear Right Spring Rate in [lbs/in]
 
 Vehicle.axle.front.left.preload = 0;        %Front Left Spring Preload [mm]
 Vehicle.axle.front.right.preload = 0;       %Front Right Spring Preload [mm]

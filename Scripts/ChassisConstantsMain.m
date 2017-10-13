@@ -7,6 +7,9 @@
 %4. If different test case is desired, then can modify directly or ideally
 %create a new test case below.
 
+clc
+clear all
+close all
 %% Vehicle Definition
 
 Vehicle = Vehicle; 
@@ -29,13 +32,12 @@ ChassisConstants.Results.Static.PitchAngle = Calculate_PitchAngle(Vehicle, Chass
 %% Pure Cornering
 Test.Ay = 2;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 20;                            %Test Vehicle Speed [m/s]
+Test.v = 17;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.2;                         %Air Density
 % Results
 ChassisConstants.Results.Cornering.TestConditions = Test;
 ChassisConstants.Results.Cornering.RollAngle = Calculate_RollAngle(Vehicle, Test);
-ChassisConstants.Results.Cornering.FrontRideHeight = Vehicle.axle.front.staticRH;
-ChassisConstants.Results.Cornering.RearRideHeight = Vehicle.axle.front.staticRH;
+[ChassisConstants.Results.Cornering.FrontRideHeight, ChassisConstants.Results.Cornering.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
 ChassisConstants.Results.Cornering.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.Cornering.FrontRideHeight, ChassisConstants.Results.Cornering.RearRideHeight);
 
 %% Pure Braking

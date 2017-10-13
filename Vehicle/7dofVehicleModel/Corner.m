@@ -21,13 +21,13 @@ classdef Corner < handle
     methods
         
         function OUT = get.SS(obj)
-            OUT = (obj.springrate * 0.175126835);         %Converting factor between lbs/inch to N/m
+            OUT = (obj.springrate * 0.175126835);         %Converting factor between lbs/inch to N/mm
         end
         function OUT = get.Wr(obj)
             OUT = obj.SS * (obj.MR^2);
         end
         function OUT = get.Kr(obj)
-            OUT = (obj.Wr*obj.Kt)/(obj.Wr + obj.Kt);
+            OUT = 1/((1/obj.Wr) + (1/obj.Kt));
         end
     end
     

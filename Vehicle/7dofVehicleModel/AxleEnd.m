@@ -17,7 +17,7 @@ classdef AxleEnd < handle
     
     properties (Dependent)
         Ar;                            %Roll Resistance of axle wheel ride rate [Nm/deg]
-        BF;                            %Anti Roll Bar Roll Resistance [N/mm]
+        Br;                            %Anti Roll Bar Roll Resistance [N/mm]
         K;                             %Axle Roll Stiffness [Nm/deg]
         USM;                           %Unsprung Mass of axle [kg]
         Kr;                            %Axle Ride Rate [N/mm]
@@ -29,16 +29,16 @@ classdef AxleEnd < handle
             val.right = Corner;
         end
         function OUT = get.Ar(obj)
-            OUT = (obj.Kr*100) * ((obj.track/2)^2) *(pi/180);
+            OUT = (obj.Kr*1000) * ((obj.track/2)^2) *(pi/180);
         end
-        function OUT = get.BF(obj)
+        function OUT = get.Br(obj)
             OUT = obj.ARBe / obj.ARBratio;
         end
         function OUT = get.USM(obj)
             OUT = obj.left.USM + obj.right.USM;
         end
         function OUT = get.K(obj)
-            OUT = obj.Ar + obj.BF;
+            OUT = obj.Ar + obj.Br;
         end
         function OUT = get.Kr(obj)
             OUT = (obj.left.Kr + obj.right.Kr);
