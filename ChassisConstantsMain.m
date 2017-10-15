@@ -32,7 +32,7 @@ ChassisConstants.Results.Static.PitchAngle = Calculate_PitchAngle(Vehicle, Chass
 %% Pure Cornering
 Test.Ay = 2;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 17;                            %Test Vehicle Speed [m/s]
+Test.v = 10;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 % Results
 ChassisConstants.Results.Cornering.TestConditions = Test;
@@ -42,7 +42,7 @@ ChassisConstants.Results.Cornering.PitchAngle = Calculate_PitchAngle(Vehicle, Ch
 
 %% Pure Braking
 Test.Ay = 0;                                    %Test Vehicle Lateral Acceleration [g]
-Test.Ax = -1.5;                                 %Test Vehicle Longitudinal Acceleration [g]
+Test.Ax = -2;                                   %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 20;                                    %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                             %Air Density
 %Results
