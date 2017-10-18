@@ -32,7 +32,7 @@ ChassisConstants.Results.Static.PitchAngle = Calculate_PitchAngle(Vehicle, Chass
 %% Steady State
 Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 16;                            %Test Vehicle Speed [m/s]
+Test.v = 20;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 %Results
 ChassisConstants.Results.SS.TestConditions = Test;
@@ -44,7 +44,7 @@ ChassisConstants.Results.SS.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisCo
 %% Pure Cornering
 Test.Ay = 2;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 10;                            %Test Vehicle Speed [m/s]
+Test.v = 16;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 % Results
 ChassisConstants.Results.Cornering.TestConditions = Test;
@@ -53,10 +53,10 @@ ChassisConstants.Results.Cornering.RollAngle = Calculate_RollAngle(Vehicle, Test
 ChassisConstants.Results.Cornering.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.Cornering.FrontRideHeight, ChassisConstants.Results.Cornering.RearRideHeight);
 
 %% Pure Braking
-Test.Ay = 0;                                    %Test Vehicle Lateral Acceleration [g]
-Test.Ax = -2;                                   %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 20;                                    %Test Vehicle Speed [m/s]
-Test.rho = 1.18415;                             %Air Density
+Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
+Test.Ax = -2;                           %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 25;                            %Test Vehicle Speed [m/s]
+Test.rho = 1.18415;                     %Air Density
 %Results
 ChassisConstants.Results.Braking.TestConditions = Test;
 ChassisConstants.Results.Braking.RollAngle = 0;
@@ -64,10 +64,10 @@ ChassisConstants.Results.Braking.RollAngle = 0;
 ChassisConstants.Results.Braking.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.Braking.FrontRideHeight, ChassisConstants.Results.Braking.RearRideHeight);
 
 %% Corner Entry
-Test.Ay = 1.25;                             %Test Vehicle Lateral Acceleration [g]
-Test.Ax = -1.25;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 15;                                %Test Vehicle Speed [m/s]
-Test.rho = 1.18415;                         %Air Density
+Test.Ay = 1.25;                         %Test Vehicle Lateral Acceleration [g]
+Test.Ax = -1.25;                        %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 20;                            %Test Vehicle Speed [m/s]
+Test.rho = 1.18415;                     %Air Density
 %Results
 ChassisConstants.Results.CornerEntry.TestConditions = Test;
 ChassisConstants.Results.CornerEntry.RollAngle = Calculate_RollAngle(Vehicle, Test);
@@ -77,7 +77,7 @@ ChassisConstants.Results.CornerEntry.PitchAngle = Calculate_PitchAngle(Vehicle, 
 %% Corner Exit
 Test.Ay = 1.25;                         %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 1;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 15;                            %Test Vehicle Speed [m/s]
+Test.v = 20;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 %Results
 ChassisConstants.Results.CornerExit.TestConditions = Test;
@@ -88,7 +88,7 @@ ChassisConstants.Results.CornerExit.PitchAngle = Calculate_PitchAngle(Vehicle, C
 %% End of Straight
 Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 25;                            %Test Vehicle Speed [m/s]
+Test.v = 33;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 %Results
 ChassisConstants.Results.EofS.TestConditions = Test;
