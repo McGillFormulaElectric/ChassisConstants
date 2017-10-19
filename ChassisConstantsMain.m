@@ -32,7 +32,7 @@ ChassisConstants.Results.Static.PitchAngle = Calculate_PitchAngle(Vehicle, Chass
 %% Steady State
 Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 20;                            %Test Vehicle Speed [m/s]
+Test.v = 10;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 %Results
 ChassisConstants.Results.SS.TestConditions = Test;
