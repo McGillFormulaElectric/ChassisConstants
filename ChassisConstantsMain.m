@@ -5,7 +5,7 @@
 %2. Run Vehicle Definition block.
 %3. Choose Test Case and run block.
 %4. If different test case is desired, then can modify directly or ideally
-%create a new test case below.
+%Create a new test case below.
 
 clc
 clear all
