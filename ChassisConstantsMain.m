@@ -17,81 +17,135 @@ Vehicle_Definition;
 
 %% Test Cases
 
-%% Static
+%% Steady State 3m/s
 Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 0;                             %Test Vehicle Speed [m/s]
+Test.v = 3;                             %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 %Results
-ChassisConstants.Results.Static.TestConditions = Test;
-ChassisConstants.Results.Static.RollAngle = 0;
-ChassisConstants.Results.Static.FrontRideHeight =  Vehicle.axle.front.staticRH;
-ChassisConstants.Results.Static.RearRideHeight =  Vehicle.axle.rear.staticRH;
-ChassisConstants.Results.Static.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.Static.FrontRideHeight, ChassisConstants.Results.Static.RearRideHeight);
+ChassisConstants.Results.SS3.TestConditions = Test;
+ChassisConstants.Results.SS3.RollAngle = 0;
+[ChassisConstants.Results.SS3.FrontRideHeight, ChassisConstants.Results.SS3.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.SS3.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS3.FrontRideHeight, ChassisConstants.Results.SS3.RearRideHeight);
 
-%% Steady State
+
+%% Steady State 6m/s
 Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 10;                            %Test Vehicle Speed [m/s]
+Test.v = 6;                             %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 %Results
-ChassisConstants.Results.SS.TestConditions = Test;
-ChassisConstants.Results.SS.RollAngle = 0;
-[ChassisConstants.Results.SS.FrontRideHeight, ChassisConstants.Results.SS.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
-ChassisConstants.Results.SS.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS.FrontRideHeight, ChassisConstants.Results.SS.RearRideHeight);
+ChassisConstants.Results.SS6.TestConditions = Test;
+ChassisConstants.Results.SS6.RollAngle = 0;
+[ChassisConstants.Results.SS6.FrontRideHeight, ChassisConstants.Results.SS6.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.SS6.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS6.FrontRideHeight, ChassisConstants.Results.SS6.RearRideHeight);
 
 
-%% Pure Cornering
-Test.Ay = 2;                            %Test Vehicle Lateral Acceleration [g]
-Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 16;                            %Test Vehicle Speed [m/s]
-Test.rho = 1.18415;                     %Air Density
-% Results
-ChassisConstants.Results.Cornering.TestConditions = Test;
-ChassisConstants.Results.Cornering.RollAngle = Calculate_RollAngle(Vehicle, Test);
-[ChassisConstants.Results.Cornering.FrontRideHeight, ChassisConstants.Results.Cornering.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
-ChassisConstants.Results.Cornering.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.Cornering.FrontRideHeight, ChassisConstants.Results.Cornering.RearRideHeight);
-
-%% Pure Braking
+%% Steady State 9m/s
 Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
-Test.Ax = -2;                           %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 25;                            %Test Vehicle Speed [m/s]
+Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 9;                             %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 %Results
-ChassisConstants.Results.Braking.TestConditions = Test;
-ChassisConstants.Results.Braking.RollAngle = 0;
-[ChassisConstants.Results.Braking.FrontRideHeight, ChassisConstants.Results.Braking.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
-ChassisConstants.Results.Braking.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.Braking.FrontRideHeight, ChassisConstants.Results.Braking.RearRideHeight);
+ChassisConstants.Results.SS9.TestConditions = Test;
+ChassisConstants.Results.SS9.RollAngle = 0;
+[ChassisConstants.Results.SS9.FrontRideHeight, ChassisConstants.Results.SS9.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.SS9.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS9.FrontRideHeight, ChassisConstants.Results.SS9.RearRideHeight);
 
-%% Corner Entry
-Test.Ay = 1.25;                         %Test Vehicle Lateral Acceleration [g]
-Test.Ax = -1.25;                        %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 20;                            %Test Vehicle Speed [m/s]
+
+%% Steady State 12m/s
+Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
+Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 12;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 %Results
-ChassisConstants.Results.CornerEntry.TestConditions = Test;
-ChassisConstants.Results.CornerEntry.RollAngle = Calculate_RollAngle(Vehicle, Test);
-[ChassisConstants.Results.CornerEntry.FrontRideHeight, ChassisConstants.Results.CornerEntry.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
-ChassisConstants.Results.CornerEntry.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.CornerEntry.FrontRideHeight, ChassisConstants.Results.CornerEntry.RearRideHeight);
+ChassisConstants.Results.SS12.TestConditions = Test;
+ChassisConstants.Results.SS12.RollAngle = 0;
+[ChassisConstants.Results.SS12.FrontRideHeight, ChassisConstants.Results.SS12.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.SS12.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS12.FrontRideHeight, ChassisConstants.Results.SS12.RearRideHeight);
 
-%% Corner Exit
-Test.Ay = 1.25;                         %Test Vehicle Lateral Acceleration [g]
-Test.Ax = 1;                            %Test Vehicle Longitudinal Acceleration [g]
-Test.v = 20;                            %Test Vehicle Speed [m/s]
+
+%% Steady State 15m/s
+Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
+Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 15;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 %Results
-ChassisConstants.Results.CornerExit.TestConditions = Test;
-ChassisConstants.Results.CornerExit.RollAngle = Calculate_RollAngle(Vehicle, Test);
-[ChassisConstants.Results.CornerExit.FrontRideHeight, ChassisConstants.Results.CornerExit.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
-ChassisConstants.Results.CornerExit.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.CornerExit.FrontRideHeight, ChassisConstants.Results.CornerExit.RearRideHeight);
+ChassisConstants.Results.SS15.TestConditions = Test;
+ChassisConstants.Results.SS15.RollAngle = 0;
+[ChassisConstants.Results.SS15.FrontRideHeight, ChassisConstants.Results.SS15.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.SS15.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS15.FrontRideHeight, ChassisConstants.Results.SS15.RearRideHeight);
 
-%% End of Straight
+
+%% Steady State 18m/s
+Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
+Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 18;                            %Test Vehicle Speed [m/s]
+Test.rho = 1.18415;                     %Air Density
+%Results
+ChassisConstants.Results.SS18.TestConditions = Test;
+ChassisConstants.Results.SS18.RollAngle = 0;
+[ChassisConstants.Results.SS18.FrontRideHeight, ChassisConstants.Results.SS18.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.SS18.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS18.FrontRideHeight, ChassisConstants.Results.SS18.RearRideHeight);
+
+
+%% Steady State 21m/s
+Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
+Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 21;                            %Test Vehicle Speed [m/s]
+Test.rho = 1.18415;                     %Air Density
+%Results
+ChassisConstants.Results.SS21.TestConditions = Test;
+ChassisConstants.Results.SS21.RollAngle = 0;
+[ChassisConstants.Results.SS21.FrontRideHeight, ChassisConstants.Results.SS21.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.SS21.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS21.FrontRideHeight, ChassisConstants.Results.SS21.RearRideHeight);
+
+
+%% Steady State 24m/s
+Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
+Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 24;                            %Test Vehicle Speed [m/s]
+Test.rho = 1.18415;                     %Air Density
+%Results
+ChassisConstants.Results.SS24.TestConditions = Test;
+ChassisConstants.Results.SS24.RollAngle = 0;
+[ChassisConstants.Results.SS24.FrontRideHeight, ChassisConstants.Results.SS24.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.SS24.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS24.FrontRideHeight, ChassisConstants.Results.SS24.RearRideHeight);
+
+
+%% Steady State 27m/s
+Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
+Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 27;                            %Test Vehicle Speed [m/s]
+Test.rho = 1.18415;                     %Air Density
+%Results
+ChassisConstants.Results.SS27.TestConditions = Test;
+ChassisConstants.Results.SS27.RollAngle = 0;
+[ChassisConstants.Results.SS27.FrontRideHeight, ChassisConstants.Results.SS27.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.SS27.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS27.FrontRideHeight, ChassisConstants.Results.SS27.RearRideHeight);
+
+
+%% Steady State 30m/s
+Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
+Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
+Test.v = 30;                            %Test Vehicle Speed [m/s]
+Test.rho = 1.18415;                     %Air Density
+%Results
+ChassisConstants.Results.SS30.TestConditions = Test;
+ChassisConstants.Results.SS30.RollAngle = 0;
+[ChassisConstants.Results.SS30.FrontRideHeight, ChassisConstants.Results.SS30.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.SS30.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS30.FrontRideHeight, ChassisConstants.Results.SS30.RearRideHeight);
+
+
+%% Steady State 33m/s
 Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 33;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 %Results
-ChassisConstants.Results.EofS.TestConditions = Test;
-ChassisConstants.Results.EofS.RollAngle = 0;
-[ChassisConstants.Results.EofS.FrontRideHeight, ChassisConstants.Results.EofS.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
-ChassisConstants.Results.EofS.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.EofS.FrontRideHeight, ChassisConstants.Results.EofS.RearRideHeight);
+ChassisConstants.Results.SS33.TestConditions = Test;
+ChassisConstants.Results.SS33.RollAngle = 0;
+[ChassisConstants.Results.SS33.FrontRideHeight, ChassisConstants.Results.SS33.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
+ChassisConstants.Results.SS33.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS33.FrontRideHeight, ChassisConstants.Results.SS33.RearRideHeight);
+
+
