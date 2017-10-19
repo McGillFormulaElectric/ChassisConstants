@@ -34,7 +34,7 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 20;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
-Vehicle.aero.CLA = 4.2;                 %Updated CLA from CFD run
+Vehicle.aero.CLA = -4.2;                %Updated CLA from CFD run
 Vehicle.aero.CP = 0.52;                 %Updated CP from CFD run
 %Results
 ChassisConstants.Results.SS.TestConditions = Test;
@@ -47,6 +47,8 @@ Test.Ay = 2;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 16;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -4;                  
+Vehicle.aero.CP = 0.51; 
 % Results
 ChassisConstants.Results.Cornering.TestConditions = Test;
 ChassisConstants.Results.Cornering.RollAngle = Calculate_RollAngle(Vehicle, Test);
