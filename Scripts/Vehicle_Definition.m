@@ -10,9 +10,9 @@ Vehicle.hs = 0.25;                          %Vehicle Sprung Mass CG height [m]
 Vehicle.designRake = 0;                     %Vehicle Design Rake Angle [deg]
 
 %Aero Parameters
-Vehicle.aero.CL = -3.7;                     %Vehicle Coefficient of Lift
+Vehicle.aero.CL = -3.71;                     %Vehicle Coefficient of Lift
 Vehicle.aero.CD = 1.49;                     %Vehicle Coefficient of Drag
-Vehicle.aero.CP = 0.51;                     %Vehicle Center of Pressure
+Vehicle.aero.CP = 0.52;                     %Vehicle Center of Pressure
 Vehicle.aero.A = 1.07;                      %Vehicle Reference Area for CL [m^2]
 Vehicle.aero.CLA = Vehicle.aero.CL*Vehicle.aero.A; %Vehicle Coefficient of Lift*Ref Area [m^2]
 

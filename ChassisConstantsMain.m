@@ -22,6 +22,8 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 3;                             %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -3.29;               %Update value of CLA from CFD
+Vehicle.aero.CP = 0.47;                 %Updated value of CP from CFD
 %Results
 ChassisConstants.Results.SS3.TestConditions = Test;
 ChassisConstants.Results.SS3.RollAngle = 0;
@@ -34,6 +36,8 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 6;                             %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -3.62;               %Update value of CLA from CFD
+Vehicle.aero.CP = 0.49;                 %Updated value of CP from CFD
 %Results
 ChassisConstants.Results.SS6.TestConditions = Test;
 ChassisConstants.Results.SS6.RollAngle = 0;
@@ -46,6 +50,8 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 9;                             %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -3.88;               %Update value of CLA from CFD
+Vehicle.aero.CP = 0.50;                 %Updated value of CP from CFD
 %Results
 ChassisConstants.Results.SS9.TestConditions = Test;
 ChassisConstants.Results.SS9.RollAngle = 0;
@@ -58,6 +64,8 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 12;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -4.01;               %Update value of CLA from CFD
+Vehicle.aero.CP = 0.52;                 %Updated value of CP from CFD
 %Results
 ChassisConstants.Results.SS12.TestConditions = Test;
 ChassisConstants.Results.SS12.RollAngle = 0;
@@ -70,6 +78,8 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 15;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -4.17;               %Update value of CLA from CFD
+Vehicle.aero.CP = 0.52;                 %Updated value of CP from CFD
 %Results
 ChassisConstants.Results.SS15.TestConditions = Test;
 ChassisConstants.Results.SS15.RollAngle = 0;
@@ -82,6 +92,8 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 18;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -4.20;               %Update value of CLA from CFD
+Vehicle.aero.CP = 0.52;                 %Updated value of CP from CFD
 %Results
 ChassisConstants.Results.SS18.TestConditions = Test;
 ChassisConstants.Results.SS18.RollAngle = 0;
@@ -94,6 +106,8 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 21;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -4.34;               %Update value of CLA from CFD
+Vehicle.aero.CP = 0.54;                 %Updated value of CP from CFD
 %Results
 ChassisConstants.Results.SS21.TestConditions = Test;
 ChassisConstants.Results.SS21.RollAngle = 0;
@@ -106,6 +120,8 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 24;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -4.34;               %Update value of CLA from CFD
+Vehicle.aero.CP = 0.54;                 %Updated value of CP from CFD
 %Results
 ChassisConstants.Results.SS24.TestConditions = Test;
 ChassisConstants.Results.SS24.RollAngle = 0;
@@ -118,6 +134,8 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 27;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -4.35;               %Update value of CLA from CFD
+Vehicle.aero.CP = 0.55;                 %Updated value of CP from CFD
 %Results
 ChassisConstants.Results.SS27.TestConditions = Test;
 ChassisConstants.Results.SS27.RollAngle = 0;
@@ -130,6 +148,8 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 30;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -4.35;               %Update value of CLA from CFD
+Vehicle.aero.CP = 0.56;                 %Updated value of CP from CFD
 %Results
 ChassisConstants.Results.SS30.TestConditions = Test;
 ChassisConstants.Results.SS30.RollAngle = 0;
@@ -142,6 +162,8 @@ Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 33;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
+Vehicle.aero.CLA = -3.86;               %Update value of CLA from CFD
+Vehicle.aero.CP = 0.54;                 %Updated value of CP from CFD
 %Results
 ChassisConstants.Results.SS33.TestConditions = Test;
 ChassisConstants.Results.SS33.RollAngle = 0;
