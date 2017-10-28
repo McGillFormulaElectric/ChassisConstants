@@ -57,7 +57,7 @@ ChassisConstants.Results.Cornering.PitchAngle = Calculate_PitchAngle(Vehicle, Ch
 
 %% Pure Braking
 Test.Ay = 0;                            %Test Vehicle Lateral Acceleration [g]
-Test.Ax = -2;                           %Test Vehicle Longitudinal Acceleration [g]
+Test.Ax = -2.5;                           %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 25;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 Vehicle.aero.CLA = -3.61;               %Updated CLA from CFD run
