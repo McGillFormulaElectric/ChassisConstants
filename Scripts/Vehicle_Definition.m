@@ -2,8 +2,8 @@
 
 %% Vehicle Object
 
-Vehicle.m = 245;                            %Total Vehicle Mass [kg]
-Vehicle.MD = 0.48;                          %Vehicle Mass distribution [%front]
+Vehicle.m = 350;                            %Total Vehicle Mass [kg]
+Vehicle.MD = 0.445;                         %Vehicle Mass distribution [%front]
 Vehicle.h = 0.27;                           %Vehicle Centre of Gravity Height [m]
 Vehicle.wheelbase = 1.56;                   %Vehicle Wheelbase [m]
 Vehicle.hs = 0.25;                          %Vehicle Sprung Mass CG height [m]
@@ -18,7 +18,7 @@ Vehicle.aero.CLA = Vehicle.aero.CL*Vehicle.aero.A; %Vehicle Coefficient of Lift*
 
 %Axle Parameters
 Vehicle.axle.front.track = 1.1176;               %Front Axle Track [m]
-Vehicle.axle.rear.track = 1.1176;                %Front Axle Track [m]
+Vehicle.axle.rear.track = 1.1176;                %Rear Axle Track [m]
 
 Vehicle.axle.front.zRC = 0.0882;              %Front Roll Center height (m - from ground)
 Vehicle.axle.rear.zRC = 0.0892;               %Rear Roll Center height (m - from ground)
