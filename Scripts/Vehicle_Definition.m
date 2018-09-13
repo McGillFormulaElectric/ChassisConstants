@@ -35,8 +35,8 @@ Vehicle.axle.rear.staticRH = 0;             %Axle Static Delta Ride height to De
 Vehicle.axle.front.ARBratio = 0.207;            %Front ARB Rotation to Vehicle Roll
 Vehicle.axle.rear.ARBratio = 0.231;             %Rear ARB Rotation to Vehicle Roll
 
-Vehicle.axle.front.ARBe = 0;%6.65;                 %Front ARB Torsional Stiffness [Nm/deg]
-Vehicle.axle.rear.ARBe = 0;%5;                  %Rear ARB Torsional Stiffness [Nm/deg]
+Vehicle.axle.front.ARBe = 6.65;                 %Front ARB Torsional Stiffness [Nm/deg]
+Vehicle.axle.rear.ARBe = 5;                  %Rear ARB Torsional Stiffness [Nm/deg]
 
 %Corner Parameters
 Vehicle.axle.front.left.USM = 15;           %Front Left Unsprung mass [kg]
