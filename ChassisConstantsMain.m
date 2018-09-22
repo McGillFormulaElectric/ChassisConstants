@@ -42,13 +42,13 @@ ChassisConstants.Results.SS.RollAngle = 0;
 [ChassisConstants.Results.SS.FrontRideHeight, ChassisConstants.Results.SS.RearRideHeight] = Calculate_PitchRideHeights(Vehicle, Test);
 ChassisConstants.Results.SS.PitchAngle = Calculate_PitchAngle(Vehicle, ChassisConstants.Results.SS.FrontRideHeight, ChassisConstants.Results.SS.RearRideHeight);
 
-%% Pure Cornering
-Test.Ay = 2;                            %Test Vehicle Lateral Acceleration [g]
+%% Pure Cornering for Aero CFD
+Test.Ay = 1;                            %Test Vehicle Lateral Acceleration [g]
 Test.Ax = 0;                            %Test Vehicle Longitudinal Acceleration [g]
 Test.v = 16;                            %Test Vehicle Speed [m/s]
 Test.rho = 1.18415;                     %Air Density
 Vehicle.aero.CLA = -3.92;               %Updated CLA from CFD run            
-Vehicle.aero.CP = 0.51;                 %Updated CP from CFD run
+Vehicle.aero.CP = 0.45;                 %Updated CP from CFD run
 % Results
 ChassisConstants.Results.Cornering.TestConditions = Test;
 ChassisConstants.Results.Cornering.RollAngle = Calculate_RollAngle(Vehicle, Test);
